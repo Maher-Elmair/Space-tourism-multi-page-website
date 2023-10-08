@@ -1,0 +1,107 @@
+// import global page
+@import "_global.scss";
+
+:root {
+  /* The image used */
+  background: url(../images/home/background-home-desktop.jpg);
+  @include media("<=tablet") {
+    background: url(../images/home/background-home-tablet.jpg);
+  }
+}
+/*! start code */
+/*! start main */
+.main {
+  // display: none;
+  .container {
+    margin: 14rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .space {
+      color: $colorSubheading;
+      max-width: 40%;
+      p:nth-child(1) {
+        font: {
+          size: 20px;
+          family: "Barlow";
+        }
+      }
+      p:nth-child(2) {
+        text-transform: uppercase;
+        color: $colorNormal;
+        margin: 12px auto;
+        font: {
+          size: 120px;
+          family: "Bellefair";
+        }
+      }
+      p:nth-child(3) {
+        line-height: 1.6;
+        font: {
+          size: 16px;
+          family: "Barlow";
+        }
+      }
+    }
+    .explor {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 17.125rem;
+        height: 17.125rem;
+        border-radius: 50%;
+        background-color: $colorNormal;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: $colorNormalDark;
+        font: {
+          size: 30px;
+          family: "Bellefair";
+        }
+        &:hover {
+          box-shadow: 0 0 0px 60px rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container {
+      margin: 6rem auto 0;
+      flex-direction: column;
+      text-align: center;
+      .space {
+        max-width: initial;
+        margin-bottom: 4rem;
+        p:nth-child(1) {
+          font-size: 18px;
+        }
+        p:nth-child(2) {
+          font-size: 100px;
+        }
+        p:nth-child(3) {
+          font-size: 14px;
+          max-width: 85%;
+          margin: auto;
+        }
+      }
+    }
+  }
+  @include media("<=phone") {
+    .container {
+      margin: 6rem auto 0;
+      .space {
+        margin-bottom: 4rem;
+        p:nth-child(2) {
+          font-size: 90px;
+        }
+      }
+      .explor a {
+        width: 14.125rem;
+        height: 14.125rem;
+      }
+    }
+  }
+}
+/*! end code */

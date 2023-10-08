@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Bellefair&display=swap");
+/**
+*
+* Testing
+*
+**/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #ffffff;
+  border-left: 0 solid #ffffff;
+  border-right: 0 solid #ffffff;
+  margin-block: 3px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6070c0;
+  width: 15% !important;
+  height: 15% !important;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-moz-selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #6070c0;
+}
+
+::selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #6070c0;
+}
+
+/* end variables */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /*small*/
+  /* tablet */
+  /* Medium */
+  /* desktop  */
+}
+@media (min-width: 577px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*! start variables*/
+/*! end variables*/
+/*! start Global Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "Bellefair", serif;
+}
+
+:root {
+  /* The image used */
+  background: url(../images/home/background-home-desktop.jpg);
+  /* Used if the image is unavailable */
+  background-color: var(--main-color);
+  /* You must set a specified height */
+  min-height: 100vh;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /* Center the image */
+  background-position: center;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* clear:both; what do you use  */
+  position: relative;
+}
+@media (max-width: 768px) {
+  :root {
+    background: url(../images/home/background-home-tablet.jpg);
+    min-height: initial;
+  }
+}
+
+/*! end Global Rules*/
+/*! start code */
+/*! start header */
+header {
+  position: relative;
+}
+header .container {
+  margin: 3rem auto 0;
+}
+header .container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container nav .logo {
+  position: relative;
+  z-index: 111;
+}
+header .container nav .logo img {
+  width: 50px;
+  height: 100%;
+}
+header .container nav .line {
+  height: 1px;
+  width: 40%;
+  background-color: #48556a;
+  transform: translateX(40px);
+  position: relative;
+  z-index: 11;
+}
+header .container nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 100px 2rem 60px;
+  background: rgba(255, 255, 255, 0.04);
+  /* Add the blur effect */
+  backdrop-filter: blur(6px);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+header .container nav ul::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -65%;
+  height: 1px;
+  width: 65%;
+  max-width: 500px;
+  background-color: #48556a;
+  transform: translateX(40px);
+}
+header .container nav ul li {
+  position: relative;
+}
+header .container nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Barlow";
+}
+header .container nav ul li a span {
+  font-weight: 600;
+}
+header .container nav ul li a::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -2rem;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+header .container nav ul li a:hover {
+  cursor: pointer;
+}
+header .container nav ul li a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+  opacity: 0.6;
+}
+header .container nav ul li .active-line::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -2rem;
+  left: 0;
+  background-color: #ffffff;
+  visibility: visible;
+  transform: scaleX(1);
+  transition: all 0.3s ease-in-out 0s;
+}
+header .container nav .menu,
+header .container nav .close {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 11;
+}
+@media (max-width: 1029px) {
+  header .container nav ul::before {
+    left: -46%;
+    max-width: 280px;
+  }
+}
+@media (max-width: 999px) {
+  header .container nav ul::before {
+    left: -27%;
+    max-width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  header .container {
+    margin: 2rem auto 0;
+  }
+  header .container nav ul {
+    display: none;
+  }
+  header .container nav ul li a {
+    font-size: 18px;
+  }
+  header .container nav .menu {
+    display: block;
+  }
+  header .container nav .open {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    padding-top: 120px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    min-width: 40vh;
+    /* Add the blur effect */
+    backdrop-filter: blur(10px);
+  }
+  header .container nav .open::before {
+    display: none;
+  }
+  header .container nav .open li a::before,
+  header .container nav .open .active-line::before {
+    bottom: -1rem;
+  }
+}
+@media (max-width: 480px) {
+  header .container nav .open {
+    min-width: 20vh;
+  }
+}
+
+/*! start footer */
+footer .container {
+  margin: 6rem auto 0;
+  /*! start Attribution */
+}
+footer .container .attribution {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  padding: 40px 0 10px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+footer .container .attribution a {
+  font-size: smaller;
+  text-decoration: none;
+  color: #d0d6f9;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+}
+footer .container .attribution a:hover::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: "\f0a9";
+  font-size: 14px;
+  padding: 0 8px;
+}
+@media (max-width: 768px) {
+  footer .container {
+    margin: 2rem auto 0;
+  }
+}
+
+/*! end code */
+:root {
+  /* The image used */
+  background: url(../images/crew/background-crew-desktop.jpg);
+}
+@media (max-width: 768px) {
+  :root {
+    background: url(../images/crew/background-crew-tablet.jpg);
+  }
+}
+
+/*! start code */
+/*! start main */
+.main .container {
+  margin: 8rem auto 0;
+}
+.main .container .text {
+  margin-bottom: 8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+}
+.main .container .text span {
+  color: #48556a;
+  margin-right: 12px;
+  font-weight: 600;
+}
+.main .container .crew-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main .container .crew-content .crew-all {
+  display: block;
+  max-width: 50%;
+}
+.main .container .crew-content .crew-all .crew .job {
+  color: #d0d6f9;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+}
+.main .container .crew-content .crew-all .crew .name-crew {
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 1rem auto 2rem;
+  font-size: 45px;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+}
+.main .container .crew-content .crew-all .crew .about-him {
+  color: #d0d6f9;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+}
+.main .container .crew-content .crew-all ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 28%;
+  margin: 4rem 0 0;
+}
+.main .container .crew-content .crew-all ul li {
+  background-color: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.main .container .crew-content .crew-all ul .active-dot {
+  background-color: #ffffff;
+  opacity: 1;
+}
+.main .container .crew-content .your-image {
+  max-width: 400px;
+  border-bottom: 1px solid #ffffff;
+  margin-block: -8rem;
+}
+@media (max-width: 999px) {
+  .main .container {
+    margin: 6rem auto 0;
+  }
+  .main .container .text {
+    margin-bottom: 6rem;
+  }
+  .main .container .crew-content .crew-all ul {
+    max-width: 36%;
+  }
+}
+@media (max-width: 768px) {
+  .main .container {
+    margin: 6rem auto 0;
+  }
+  .main .container .text {
+    margin-bottom: 4rem;
+    font-size: 24px;
+  }
+  .main .container .crew-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .main .container .crew-content .crew-all {
+    max-width: initial;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    border-top: 1px solid #48556a;
+  }
+  .main .container .crew-content .crew-all .crew .job {
+    font-size: 30px;
+  }
+  .main .container .crew-content .crew-all .crew .name {
+    font-size: 40px;
+  }
+  .main .container .crew-content .crew-all .crew .about-him {
+    font-size: 18px;
+  }
+  .main .container .crew-content .crew-all ul {
+    margin: 4rem auto 2rem;
+    max-width: 40%;
+  }
+  .main .container .crew-content .your-image {
+    max-width: 360px;
+    border: none;
+    margin-block: initial;
+  }
+}
+@media (max-width: 380px) {
+  .main .container {
+    margin: 4rem auto 0;
+  }
+  .main .container .text {
+    margin-bottom: 4rem;
+  }
+  .main .container .crew-content .crew-all .crew .job {
+    margin-top: 4rem;
+  }
+  .main .container .crew-content .your-image {
+    max-width: 300px;
+    border: none;
+  }
+}
+
+footer .container {
+  margin: 2rem auto 0;
+}
+footer .container .attribution {
+  text-align: start;
+}
+@media (max-width: 999px) {
+  footer .container {
+    margin: 1rem auto 0;
+  }
+}
+@media (max-width: 768px) {
+  footer .container {
+    margin: 0rem auto;
+  }
+  footer .container .attribution {
+    text-align: center;
+  }
+}
+
+/*! end code *//*# sourceMappingURL=crew.css.map */

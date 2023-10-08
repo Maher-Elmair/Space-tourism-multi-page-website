@@ -1,0 +1,293 @@
+// import file to font app
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Bellefair&display=swap");
+
+// import file to media cwery
+@import "_breakpoints.scss";
+
+// import create Custom-Scrollbars-&-Selection-color
+@import "_Custom-Scrollbars-&-Selection-color.scss";
+
+// import containerScreen
+@import "_containerScreen.scss";
+
+
+/*! start variables*/
+
+$colorNormal: #ffffff;
+$colorNormalDark: #0b0d17;
+$colorHeading: #48556a;
+$colorSubheading: #d0d6f9;
+
+/*! end variables*/
+/*! start Global Rules*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "Bellefair", serif;
+}
+:root {
+  /* The image used */
+  background: url(../images/home/background-home-desktop.jpg);
+  /* Used if the image is unavailable */
+  background-color: var(--main-color);
+  /* You must set a specified height */
+  min-height: 100vh;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /* Center the image */
+  background-position: center;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* clear:both; what do you use  */
+  position: relative;
+  @include media("<=tablet") {
+    background: url(../images/home/background-home-tablet.jpg);
+    min-height: initial;
+  }
+}
+/*! end Global Rules*/
+
+/*! start code */
+/*! start header */
+header {
+  position: relative;
+  .container {
+    margin: 3rem auto 0;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        position: relative;
+        z-index: 111;
+        img {
+          width: 50px;
+          height: 100%;
+        }
+      }
+      .line {
+        height: 1px;
+        width: 40%;
+        background-color: $colorHeading;
+        transform: translateX(40px);
+        position: relative;
+        z-index: 11;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem 100px 2rem 60px;
+        background: rgba(255, 255, 255, 0.04);
+        /* Add the blur effect */
+        backdrop-filter: blur(6px);
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -65%;
+          height: 1px;
+          width: 65%;
+          max-width: 500px;
+          background-color: $colorHeading;
+          transform: translateX(40px);
+        }
+        li {
+          position: relative;
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            color: $colorNormal;
+            font: {
+              size: 16px;
+              family: "Barlow";
+            }
+            span {
+              font-weight: 600;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              height: 2px;
+              width: 100%;
+              bottom: -2rem;
+              left: 0;
+              background-color: $colorNormal;
+              // transition: width 0.2s ease;
+              visibility: hidden;
+              transform: scaleX(0);
+              transition: all 0.3s ease-in-out 0s;
+            }
+            &:hover {
+              cursor: pointer;
+              &::before {
+                visibility: visible;
+                transform: scaleX(1);
+                opacity: 0.6;
+              }
+            }
+          }
+          .active-line {
+            &::before {
+              content: "";
+              position: absolute;
+              height: 2px;
+              width: 100%;
+              bottom: -2rem;
+              left: 0;
+              background-color: $colorNormal;
+              // transition: width 0.2s ease;
+              visibility: visible;
+              transform: scaleX(1);
+              transition: all 0.3s ease-in-out 0s;
+            }
+          }
+        }
+      }
+      .menu,
+      .close {
+        display: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 11;
+      }
+    }
+  }
+  @include media("<=1029px") {
+    .container nav ul::before {
+      left: -46%;
+      max-width: 280px;
+    }
+  }
+  @include media("<=999px") {
+    .container nav ul::before {
+      left: -27%;
+      max-width: 180px;
+    }
+  }
+  @include media("<=tablet") {
+    .container {
+      margin: 2rem auto 0;
+      nav {
+        ul {
+          display: none;
+          li a {
+            font-size: 18px;
+          }
+        }
+        .menu {
+          display: block;
+        }
+        .open {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 40px;
+          padding-top: 120px;
+          position: fixed;
+          top: 0;
+          right: 0;
+          min-height: 100vh;
+          min-width: 40vh;
+          /* Add the blur effect */
+          backdrop-filter: blur(10px);
+          &::before {
+            display: none;
+          }
+          li a,
+          .active-line {
+            &::before {
+              bottom: -1rem;
+            }
+          }
+          // li a,
+          // .active-line {
+          //   &::before {
+          //     height: 3px;
+          //     // width: 40px;
+          //     transform: rotate(90deg) translate(-40px, -268px);
+          //   }
+          //   &:hover {
+          //     &::before {
+          //       width: 40px;
+          //     }
+          //   }
+          // }
+          // li .active-line {
+          //   &::before {
+          //     width: 40px;
+          //   }
+          // }
+        }
+      }
+    }
+  }
+  @include media("<=480px") {
+    .container nav .open {
+      min-width: 20vh;
+      // li a,
+      // .active-line {
+      //   &::before {
+      //     transform: rotate(90deg) translate(-40px, -210px);
+      //   }
+      // }
+    }
+  }
+}
+/*! start footer */
+footer {
+    .container {
+      margin: 6rem auto 0;
+      /*! start Attribution */
+      .attribution {
+        color: $colorNormal;
+        font-size: 16px;
+        font-family: "Bellefair", serif;
+        font-weight: 400;
+        padding: 40px 0 10px 0;
+        text-align: center;
+        width: -webkit-fill-available;
+        a {
+          font-size: smaller;
+          text-decoration: none;
+          color: $colorSubheading;
+          text-transform: capitalize;
+          font-size: 12px;
+          font-family: "Barlow", sans-serif;
+          font-weight: 400;
+          white-space: nowrap;
+          &:hover::after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            content: "\f0a9";
+            font-size: 14px;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    @include media("<=tablet") {
+      .container {
+        margin: 2rem auto 0;
+      }
+    }
+  }
+  /*! end code */

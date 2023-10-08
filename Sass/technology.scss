@@ -1,0 +1,185 @@
+// import global page
+@import "_global.scss";
+
+:root {
+  /* The image used */
+  background: url(../images/technology/background-technology-desktop.jpg);
+
+  @include media("<=tablet") {
+    background: url(../images/technology/background-technology-tablet.jpg);
+  }
+}
+/*! start code */
+/*! start main */
+.main {
+  .container {
+    margin: 8rem auto 0;
+    .text {
+      margin-bottom: 8rem;
+      color: $colorNormal;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font: {
+        size: 30px;
+        weight: 400;
+        family: "Barlow", sans-serif;
+      }
+      span {
+        color: $colorHeading;
+        margin-right: 12px;
+        font-weight: 600;
+      }
+    }
+    .technology-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      .technology-all {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 3rem;
+        ul {
+          list-style-type: none;
+          li a {
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.5rem;
+            height: 4.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: $colorNormal;
+            font: {
+              size: 24px;
+              weight: 400;
+              family: "Bellefair", serif;
+            }
+            &:hover {
+              border: 1px solid $colorNormal;
+              cursor: pointer;
+            }
+          }
+          li:nth-child(2) {
+            margin: 2rem auto;
+          }
+          .active-circle {
+            background-color: $colorNormal;
+            color: $colorHeading;
+          }
+        }
+        .technology {
+          max-width: 60%;
+          .da {
+            color: $colorSubheading;
+            text-transform: uppercase;
+            font: {
+              size: 12px;
+              weight: 600;
+              family: "Barlow";
+            }
+          }
+          .name {
+            color: $colorNormal;
+            text-transform: uppercase;
+            margin: 1rem auto 2rem;
+            font: {
+              size: 40px;
+              weight: 400;
+              family: "Bellefair", serif;
+            }
+          }
+          .description {
+            color: $colorSubheading;
+            line-height: 1.6;
+            font: {
+              size: 16px;
+              weight: 400;
+              family: "Barlow";
+            }
+          }
+        }
+      }
+      .image-about {
+        max-width: 360px;
+        max-height: 330px;
+        position: relative;
+        left: 24px;
+      }
+    }
+  }
+  @include media("<=999px") {
+    .container {
+      margin-bottom: 6rem;
+    }
+  }
+  @include media("<=tablet") {
+    overflow: hidden;
+    .container {
+      margin: 6rem auto 0;
+      .text {
+        margin-bottom: 4rem;
+      }
+      .technology-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        .technology-all {
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+          ul {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2rem;
+          }
+          .technology {
+            max-width: initial;
+          }
+        }
+        .image-about {
+          left: initial;
+          max-width: initial;
+          width: 140%;
+        }
+      }
+    }
+  }
+  @include media("<=phone") {
+    .container {
+      .text {
+        font-size: 22px;
+      }
+      .technology-content {
+        .technology-all {
+          .technology {
+            .name {
+              font-size: 32px;
+              margin: 1rem auto 1.5rem;
+            }
+            .description {
+              font-size: 14px;
+            }
+          }
+          ul {
+            gap: 1.5rem;
+            li a {
+              width: 4rem;
+              height: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer .container {
+  margin: 2rem auto 0;
+  @include media("<=tablet") {
+    margin: 0 auto;
+  }
+}
+/*! end code */

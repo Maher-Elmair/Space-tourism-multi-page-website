@@ -1,0 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Bellefair&display=swap");
+/**
+*
+* Testing
+*
+**/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #ffffff;
+  border-left: 0 solid #ffffff;
+  border-right: 0 solid #ffffff;
+  margin-block: 3px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6070c0;
+  width: 15% !important;
+  height: 15% !important;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-moz-selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #6070c0;
+}
+
+::selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #6070c0;
+}
+
+/* end variables */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /*small*/
+  /* tablet */
+  /* Medium */
+  /* desktop  */
+}
+@media (min-width: 577px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*! start variables*/
+/*! end variables*/
+/*! start Global Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "Bellefair", serif;
+}
+
+:root {
+  /* The image used */
+  background: url(../images/home/background-home-desktop.jpg);
+  /* Used if the image is unavailable */
+  background-color: var(--main-color);
+  /* You must set a specified height */
+  min-height: 100vh;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /* Center the image */
+  background-position: center;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* clear:both; what do you use  */
+  position: relative;
+}
+@media (max-width: 768px) {
+  :root {
+    background: url(../images/home/background-home-tablet.jpg);
+    min-height: initial;
+  }
+}
+
+/*! end Global Rules*/
+/*! start code */
+/*! start header */
+header {
+  position: relative;
+}
+header .container {
+  margin: 3rem auto 0;
+}
+header .container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container nav .logo {
+  position: relative;
+  z-index: 111;
+}
+header .container nav .logo img {
+  width: 50px;
+  height: 100%;
+}
+header .container nav .line {
+  height: 1px;
+  width: 40%;
+  background-color: #48556a;
+  transform: translateX(40px);
+  position: relative;
+  z-index: 11;
+}
+header .container nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 100px 2rem 60px;
+  background: rgba(255, 255, 255, 0.04);
+  /* Add the blur effect */
+  backdrop-filter: blur(6px);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+header .container nav ul::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -65%;
+  height: 1px;
+  width: 65%;
+  max-width: 500px;
+  background-color: #48556a;
+  transform: translateX(40px);
+}
+header .container nav ul li {
+  position: relative;
+}
+header .container nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Barlow";
+}
+header .container nav ul li a span {
+  font-weight: 600;
+}
+header .container nav ul li a::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -2rem;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+header .container nav ul li a:hover {
+  cursor: pointer;
+}
+header .container nav ul li a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+  opacity: 0.6;
+}
+header .container nav ul li .active-line::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: -2rem;
+  left: 0;
+  background-color: #ffffff;
+  visibility: visible;
+  transform: scaleX(1);
+  transition: all 0.3s ease-in-out 0s;
+}
+header .container nav .menu,
+header .container nav .close {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 11;
+}
+@media (max-width: 1029px) {
+  header .container nav ul::before {
+    left: -46%;
+    max-width: 280px;
+  }
+}
+@media (max-width: 999px) {
+  header .container nav ul::before {
+    left: -27%;
+    max-width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  header .container {
+    margin: 2rem auto 0;
+  }
+  header .container nav ul {
+    display: none;
+  }
+  header .container nav ul li a {
+    font-size: 18px;
+  }
+  header .container nav .menu {
+    display: block;
+  }
+  header .container nav .open {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    padding-top: 120px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    min-width: 40vh;
+    /* Add the blur effect */
+    backdrop-filter: blur(10px);
+  }
+  header .container nav .open::before {
+    display: none;
+  }
+  header .container nav .open li a::before,
+  header .container nav .open .active-line::before {
+    bottom: -1rem;
+  }
+}
+@media (max-width: 480px) {
+  header .container nav .open {
+    min-width: 20vh;
+  }
+}
+
+/*! start footer */
+footer .container {
+  margin: 6rem auto 0;
+  /*! start Attribution */
+}
+footer .container .attribution {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  padding: 40px 0 10px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+footer .container .attribution a {
+  font-size: smaller;
+  text-decoration: none;
+  color: #d0d6f9;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+}
+footer .container .attribution a:hover::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: "\f0a9";
+  font-size: 14px;
+  padding: 0 8px;
+}
+@media (max-width: 768px) {
+  footer .container {
+    margin: 2rem auto 0;
+  }
+}
+
+/*! end code */
+:root {
+  /* The image used */
+  background: url(../images/technology/background-technology-desktop.jpg);
+}
+@media (max-width: 768px) {
+  :root {
+    background: url(../images/technology/background-technology-tablet.jpg);
+  }
+}
+
+/*! start code */
+/*! start main */
+.main .container {
+  margin: 8rem auto 0;
+}
+.main .container .text {
+  margin-bottom: 8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+}
+.main .container .text span {
+  color: #48556a;
+  margin-right: 12px;
+  font-weight: 600;
+}
+.main .container .technology-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.main .container .technology-content .technology-all {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+.main .container .technology-content .technology-all ul {
+  list-style-type: none;
+}
+.main .container .technology-content .technology-all ul li a {
+  text-decoration: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+}
+.main .container .technology-content .technology-all ul li a:hover {
+  border: 1px solid #ffffff;
+  cursor: pointer;
+}
+.main .container .technology-content .technology-all ul li:nth-child(2) {
+  margin: 2rem auto;
+}
+.main .container .technology-content .technology-all ul .active-circle {
+  background-color: #ffffff;
+  color: #48556a;
+}
+.main .container .technology-content .technology-all .technology {
+  max-width: 60%;
+}
+.main .container .technology-content .technology-all .technology .da {
+  color: #d0d6f9;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Barlow";
+}
+.main .container .technology-content .technology-all .technology .name {
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 1rem auto 2rem;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+}
+.main .container .technology-content .technology-all .technology .description {
+  color: #d0d6f9;
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Barlow";
+}
+.main .container .technology-content .image-about {
+  max-width: 360px;
+  max-height: 330px;
+  position: relative;
+  left: 24px;
+}
+@media (max-width: 999px) {
+  .main .container {
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    overflow: hidden;
+  }
+  .main .container {
+    margin: 6rem auto 0;
+  }
+  .main .container .text {
+    margin-bottom: 4rem;
+  }
+  .main .container .technology-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+  }
+  .main .container .technology-content .technology-all {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .main .container .technology-content .technology-all ul {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .main .container .technology-content .technology-all .technology {
+    max-width: initial;
+  }
+  .main .container .technology-content .image-about {
+    left: initial;
+    max-width: initial;
+    width: 140%;
+  }
+}
+@media (max-width: 360px) {
+  .main .container .text {
+    font-size: 22px;
+  }
+  .main .container .technology-content .technology-all .technology .name {
+    font-size: 32px;
+    margin: 1rem auto 1.5rem;
+  }
+  .main .container .technology-content .technology-all .technology .description {
+    font-size: 14px;
+  }
+  .main .container .technology-content .technology-all ul {
+    gap: 1.5rem;
+  }
+  .main .container .technology-content .technology-all ul li a {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+footer .container {
+  margin: 2rem auto 0;
+}
+@media (max-width: 768px) {
+  footer .container {
+    margin: 0 auto;
+  }
+}
+
+/*! end code *//*# sourceMappingURL=technology.css.map */

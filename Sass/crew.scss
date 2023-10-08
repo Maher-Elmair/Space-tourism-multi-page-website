@@ -1,0 +1,189 @@
+// import global page
+@import "_global.scss";
+
+:root {
+  /* The image used */
+  background: url(../images/crew/background-crew-desktop.jpg);
+  @include media("<=tablet") {
+    background: url(../images/crew/background-crew-tablet.jpg);
+  }
+}
+
+/*! start code */
+/*! start main */
+.main {
+  .container {
+    margin: 8rem auto 0;
+    .text {
+      margin-bottom: 8rem;
+      color: $colorNormal;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font: {
+        size: 30px;
+        weight: 400;
+        family: "Barlow", sans-serif;
+      }
+      span {
+        color: $colorHeading;
+        margin-right: 12px;
+        font-weight: 600;
+      }
+    }
+    .crew-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .crew-all {
+        display: block;
+        max-width: 50%;
+        .crew {
+          .job {
+            color: $colorSubheading;
+            text-transform: uppercase;
+            font: {
+              size: 30px;
+              weight: 400;
+              family: "Bellefair", serif;
+            }
+          }
+          .name-crew {
+            color: $colorNormal;
+            text-transform: uppercase;
+            margin: 1rem auto 2rem;
+            font: {
+              size: 45px;
+              weight: 400;
+              family: "Bellefair", serif;
+            }
+          }
+          .about-him {
+            color: $colorSubheading;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font: {
+              size: 20px;
+              weight: 400;
+              family: "Barlow", sans-serif;
+            }
+          }
+        }
+        ul {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          max-width: 28%;
+          margin: 4rem 0 0;
+          li {
+            background-color: $colorNormal;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.6;
+          }
+          .active-dot {
+            background-color: $colorNormal;
+            opacity: 1;
+          }
+        }
+      }
+      .your-image {
+        max-width: 400px;
+        border-bottom: 1px solid $colorNormal;
+        margin-block: -8rem;
+      }
+    }
+  }
+  @include media("<=999px") {
+    .container {
+      margin: 6rem auto 0;
+      .text {
+        margin-bottom: 6rem;
+      }
+      .crew-content .crew-all ul {
+        max-width: 36%;
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container {
+      margin: 6rem auto 0;
+      .text {
+        margin-bottom: 4rem;
+        font-size: 24px;
+      }
+      .crew-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        .crew-all {
+          max-width: initial;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          flex-direction: column-reverse;
+          border-top: 1px solid $colorHeading;
+          .crew {
+            .job {
+              font-size: 30px;
+            }
+            .name {
+              font-size: 40px;
+            }
+            .about-him {
+              font-size: 18px;
+            }
+          }
+          ul {
+            margin: 4rem auto 2rem;
+            max-width: 40%;
+          }
+        }
+        .your-image {
+          max-width: 360px;
+          border: none;
+          margin-block: initial;
+        }
+      }
+    }
+  }
+  @include media("<=380px") {
+    .container {
+      margin: 4rem auto 0;
+      .text {
+        margin-bottom: 4rem;
+      }
+      .crew-content {
+        .crew-all {
+          .crew {
+            .job {
+              margin-top: 4rem;
+            }
+          }
+        }
+        .your-image {
+          max-width: 300px;
+          border: none;
+        }
+      }
+    }
+  }
+}
+footer .container {
+  margin: 2rem auto 0;
+  .attribution {
+    text-align: start;
+  }
+  @include media("<=999px") {
+    margin: 1rem auto 0;
+  }
+  @include media("<=tablet") {
+    margin: 0rem auto;
+    .attribution {
+      text-align: center;
+    }
+  }
+}
+/*! end code */
