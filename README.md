@@ -104,9 +104,9 @@ Space-tourism-multi-page-website/
 
 **Maher Elmair**
 
-📫 [maher.elmair.dev@gmail.com](mailto:maher.elmair.dev@gmail.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/maher-elmair-831042237)
-❤️ Built with passion by [Maher Elmair](https://maher-elmair.github.io/My_Website)
+- 📫 [maher.elmair.dev@gmail.com](mailto:maher.elmair.dev@gmail.com)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/maher-elmair-831042237)
+- ❤️ Made with passion by [Maher Elmair](https://maher-elmair.github.io/My_Website)
 
 ---
 
